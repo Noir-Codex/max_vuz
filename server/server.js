@@ -114,7 +114,7 @@ async function startServer() {
     
     // Ensure required tables exist
     await ensureDatabaseSchema();
-
+    
     // Start listening
     app.listen(PORT, () => {
       console.log('='.repeat(50));

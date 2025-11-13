@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import Layout from '@components/common/Layout'
 import LoadingSpinner from '@components/common/LoadingSpinner'
 import ErrorMessage from '@components/common/ErrorMessage'
+import BackButton from '@components/common/BackButton'
 import ScheduleGrid from '@components/teacher/ScheduleGrid'
 import WeekSelector from '@components/teacher/WeekSelector'
 import { useTeacherStore } from '@store/teacherStore'
@@ -229,6 +230,7 @@ const Schedule = () => {
       showNavigation
       navigationItems={navigationItems}
     >
+      <BackButton to="/teacher" />
       <div className={styles.container}>
         {/* Инструменты */}
         <div className={styles.toolbar}>

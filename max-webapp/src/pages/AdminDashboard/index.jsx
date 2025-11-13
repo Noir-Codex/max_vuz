@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
-import { Layout, LoadingSpinner, ErrorMessage } from '@components/common'
+import { Layout, LoadingSpinner, ErrorMessage, BackButton } from '@components/common'
 import { StatisticsCard } from '@components/admin'
 import { fetchAdminStats } from '@services/api/admin'
 import { useAdminStore } from '@store/adminStore'
@@ -26,6 +26,7 @@ const AdminDashboard = () => {
 
   return (
     <Layout title="Панель администратора">
+      <BackButton to="/" />
       <div className={styles.container}>
         <div className={styles.statsGrid}>
           <StatisticsCard

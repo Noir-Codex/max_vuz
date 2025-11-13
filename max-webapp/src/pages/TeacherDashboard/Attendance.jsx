@@ -5,6 +5,7 @@ import { useQuery, useMutation } from '@tanstack/react-query'
 import Layout from '@components/common/Layout'
 import LoadingSpinner from '@components/common/LoadingSpinner'
 import ErrorMessage from '@components/common/ErrorMessage'
+import BackButton from '@components/common/BackButton'
 import Button from '@components/common/Button'
 import StudentCheckList from '@components/teacher/StudentCheckList'
 import QuickActions from '@components/teacher/QuickActions'
@@ -169,6 +170,7 @@ const Attendance = () => {
 
   return (
     <Layout title={t('teacher.attendance')} showHeader>
+      <BackButton to="/teacher" />
       <div className={styles.container}>
         {/* Информация о паре */}
         <div className={styles.lessonInfo}>

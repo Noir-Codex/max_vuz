@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { Layout, Button } from '@components/common'
+import { Layout, Button, BackButton } from '@components/common'
 import { AttendanceChart, FilterPanel } from '@components/admin'
 import { fetchAttendanceStats, exportAttendanceReport } from '@services/api/admin'
 import styles from './Statistics.module.css'
@@ -17,6 +17,7 @@ const Statistics = () => {
 
   return (
     <Layout title="Статистика посещаемости">
+      <BackButton to="/admin" />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Статистика посещаемости</h1>

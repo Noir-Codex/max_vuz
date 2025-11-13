@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import Layout from '@components/common/Layout'
 import LoadingSpinner from '@components/common/LoadingSpinner'
 import ErrorMessage from '@components/common/ErrorMessage'
+import BackButton from '@components/common/BackButton'
 import GroupCard from '@components/teacher/GroupCard'
 import { useTeacherStore } from '@store/teacherStore'
 import { fetchGroups } from '@services/api/teacher'
@@ -78,6 +79,7 @@ const GroupsList = () => {
       showNavigation
       navigationItems={navigationItems}
     >
+      <BackButton to="/teacher" />
       <div className={styles.container}>
         {/* Поиск */}
         <div className={styles.searchBox}>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { Layout, Button } from '@components/common'
+import { Layout, Button, BackButton } from '@components/common'
 import { ScheduleTable, ScheduleForm, ConfirmDialog } from '@components/admin'
 import { fetchSchedule, fetchGroups, fetchSubjects, fetchTeachers, createLesson, updateLesson, deleteLesson } from '@services/api/admin'
 import styles from './Users.module.css'
@@ -54,6 +54,7 @@ const Schedule = () => {
 
   return (
     <Layout title="Управление расписанием">
+      <BackButton to="/admin" />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Расписание</h1>

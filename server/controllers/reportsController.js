@@ -141,7 +141,7 @@ exports.exportGroupsStats = asyncHandler(async (req, res) => {
  */
 exports.getDashboardStats = asyncHandler(async (req, res) => {
   const { query } = require('../config/database');
-
+  
   const [
     userStats,
     subjectStats,
@@ -154,20 +154,20 @@ exports.getDashboardStats = asyncHandler(async (req, res) => {
     query(`SELECT COUNT(*) as total_groups FROM groups`),
     query(`SELECT COUNT(*) as total_lessons FROM schedule`),
     query(`
-      SELECT
-        COALESCE(
-          ROUND(
-            (COUNT(CASE WHEN status = 'present' THEN 1 END)::numeric /
-            NULLIF(COUNT(*), 0)::numeric * 100)::numeric,
-            2
-          ),
-          0
-        ) as average_attendance
-      FROM attendance
-      WHERE date >= NOW() - INTERVAL '30 days'
+    SELECT
+      COALESCE(
+        ROUND(
+          (COUNT(CASE WHEN status = 'present' THEN 1 END)::numeric /
+          NULLIF(COUNT(*), 0)::numeric * 100)::numeric,
+          2
+        ),
+        0
+      ) as average_attendance
+    FROM attendance
+    WHERE date >= NOW() - INTERVAL '30 days'
     `),
   ])
-
+  
   res.json({
     totalUsers: parseInt(userStats?.total) || 0,
     totalStudents: parseInt(userStats?.students) || 0,

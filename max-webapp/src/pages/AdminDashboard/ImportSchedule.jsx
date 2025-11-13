@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { Layout, Button } from '@components/common'
+import { Layout, Button, BackButton } from '@components/common'
 import { FileUpload, ImportPreview } from '@components/admin'
 import { validateSchedule, importSchedule } from '@services/api/admin'
 import styles from './Users.module.css'
@@ -48,6 +48,7 @@ const ImportSchedule = () => {
 
   return (
     <Layout title="Импорт расписания">
+      <BackButton to="/admin" />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Импорт расписания</h1>

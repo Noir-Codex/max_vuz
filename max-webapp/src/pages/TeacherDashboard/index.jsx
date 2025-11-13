@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import Layout from '@components/common/Layout'
 import LoadingSpinner from '@components/common/LoadingSpinner'
 import ErrorMessage from '@components/common/ErrorMessage'
+import BackButton from '@components/common/BackButton'
 import ScheduleItem from '@components/teacher/ScheduleItem'
 import { useTeacherStore } from '@store/teacherStore'
 import { useAuthStore } from '@store/authStore'
@@ -100,6 +101,7 @@ const TeacherDashboard = () => {
       showNavigation
       navigationItems={navigationItems}
     >
+      <BackButton to="/" />
       <div className={styles.dashboard}>
         {/* Статистика */}
         <div className={styles.statsGrid}>

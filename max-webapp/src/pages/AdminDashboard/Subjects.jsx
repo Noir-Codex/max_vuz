@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { Layout, Button } from '@components/common'
+import { Layout, Button, BackButton } from '@components/common'
 import { SubjectList, SubjectForm, ConfirmDialog } from '@components/admin'
 import { fetchSubjects, createSubject, updateSubject, deleteSubject } from '@services/api/admin'
 import styles from './Users.module.css'
@@ -30,6 +30,7 @@ const Subjects = () => {
 
   return (
     <Layout title="Управление дисциплинами">
+      <BackButton to="/admin" />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Дисциплины</h1>

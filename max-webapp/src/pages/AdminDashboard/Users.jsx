@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { Layout, Button } from '@components/common'
+import { Layout, Button, BackButton } from '@components/common'
 import { UserList, UserForm, ConfirmDialog } from '@components/admin'
 import { fetchUsers, createUser, updateUser, deleteUser, fetchGroups } from '@services/api/admin'
 import styles from './Users.module.css'
@@ -56,6 +56,7 @@ const Users = () => {
 
   return (
     <Layout title="Управление пользователями">
+      <BackButton to="/admin" />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Пользователи</h1>

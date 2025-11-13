@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
-import { Layout, Button } from '@components/common'
+import { Layout, Button, BackButton } from '@components/common'
 import { GroupList, GroupForm, ConfirmDialog } from '@components/admin'
 import { fetchGroups, fetchTeachers, fetchGroupStudents, createGroup, updateGroup, deleteGroup } from '@services/api/admin'
 import styles from './Users.module.css'
@@ -39,6 +39,7 @@ const Groups = () => {
 
   return (
     <Layout title="Управление группами">
+      <BackButton to="/admin" />
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Группы</h1>
